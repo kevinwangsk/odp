@@ -97,7 +97,6 @@ odpapiplatinclude_HEADERS = \
 		  $(srcdir)/include/odp/api/plat/init_types.h \
 		  $(srcdir)/include/odp/api/plat/ipsec_types.h \
 		  $(srcdir)/include/odp/api/plat/packet_flag_inlines.h \
-		  $(srcdir)/include/odp/api/plat/packet_flag_inlines_api.h \
 		  $(srcdir)/include/odp/api/plat/packet_inlines.h \
 		  $(srcdir)/include/odp/api/plat/packet_inlines_api.h \
 		  $(srcdir)/include/odp/api/plat/packet_types.h \
@@ -238,9 +237,8 @@ __LIB__libodp_linux_la_SOURCES = \
 			   odp_impl.c \
 			   odp_ipsec.c \
 			   odp_name_table.c \
-			   odp_packet.c \
-			   odp_packet_flags.c \
 			   odp_packet_io.c \
+			   packet/generic.c \
 			   packet/subsystem.c \
 			   pktio/ethtool.c \
 			   pktio/subsystem.c \
@@ -356,6 +354,7 @@ endif
 
 pool/generic.lo: AM_CFLAGS += -DIM_ACTIVE_MODULE
 buffer/generic.lo: AM_CFLAGS += -DIM_ACTIVE_MODULE
+packet/generic.lo: AM_CFLAGS += -DIM_ACTIVE_MODULE
 if ODP_SCHEDULE_SCALABLE
 schedule/scalable.lo: AM_CFLAGS += -DIM_ACTIVE_MODULE
 else
