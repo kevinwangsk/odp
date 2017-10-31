@@ -66,9 +66,6 @@ cache:
 env:
         - CONF=""
         - CONF="--disable-abi-compat"
-        - CONF="--enable-schedule-sp"
-        - CONF="--enable-schedule-iquery"
-        - CONF="--enable-schedule-scalable"
         - CONF="--enable-dpdk-zero-copy"
         - CROSS_ARCH="arm64"
         - CROSS_ARCH="armhf" CFLAGS="-march=armv7-a"
