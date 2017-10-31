@@ -73,16 +73,6 @@ struct odp_buffer_hdr_t {
 	/* Segments */
 	seg_entry_t seg[CONFIG_PACKET_MAX_SEGS];
 
-	/* Burst counts */
-	uint8_t   burst_num;
-	uint8_t   burst_first;
-
-	/* Next buf in a list */
-	struct odp_buffer_hdr_t *next;
-
-	/* Burst table */
-	struct odp_buffer_hdr_t *burst[BUFFER_BURST_SIZE];
-
 	/* --- Mostly read only data --- */
 
 	/* User context pointer or u64 */
