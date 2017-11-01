@@ -257,8 +257,6 @@ __LIB__libodp_linux_la_SOURCES = \
 			   odp_pkt_queue.c \
 			   odp_queue_if.c \
 			   queue/subsystem.c \
-			   queue/generic.c \
-			   queue/scalable.c \
 			   odp_rwlock.c \
 			   odp_rwlock_recursive.c \
 			   odp_schedule_if.c \
@@ -366,8 +364,10 @@ if ODP_SCHEDULE_IQUERY
 schedule/iquery.lo: AM_CFLAGS += -DIM_ACTIVE_MODULE
 endif
 if ODP_SCHEDULE_SCALABLE
+__LIB__libodp_linux_la_SOURCES += queue/scalable.c
 queue/scalable.lo: AM_CFLAGS += -DIM_ACTIVE_MODULE
 else
+__LIB__libodp_linux_la_SOURCES += queue/generic.c
 queue/generic.lo: AM_CFLAGS += -DIM_ACTIVE_MODULE
 endif
 
